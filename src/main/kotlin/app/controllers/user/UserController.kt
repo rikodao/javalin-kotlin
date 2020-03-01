@@ -23,7 +23,7 @@ class UserController(val userCreateUseCase: IUserCreateUseCase, val userIndexUse
 
 
     private fun splitName(name: String): Pair<String, String> {
-        val namelist: List<String> = name.split('\n')
+        val namelist: List<String> = name.split("\\s".toRegex())
         val firstName = namelist[0]
         val lastName = namelist[1]
         return Pair(firstName, lastName)
